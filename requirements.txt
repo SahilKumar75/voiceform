@@ -1,0 +1,4 @@
+# Filled in as each milestone in docs/build-plan.md is built.
+# Day 2-3: ASR (Whisper via Qualcomm AI Hub export)
+# Day 4-5: GenieX client / llama.cpp grammar tooling
+# Day 6-7: frontend (streamlit, or flask + jinja)
