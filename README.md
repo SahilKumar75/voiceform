@@ -2,7 +2,7 @@
 
 An on device voice assistant that fills the NSP Post-Matric Scholarship form for a low literacy Hindi speaker, with a spoken confirm and correct loop. Built for the Snapdragon® AI Lab Build & Present Challenge (Qualcomm, 2026).
 
-**Status: AI Hub NPU benchmark obtained, app build not started yet.**
+**Status: AI Hub NPU benchmark obtained, schema locked, placeholder UI built (no ASR/LLM wired up yet).**
 
 ## What's real vs. simulated
 _To be filled in as the build progresses, see docs/build plan.md Decision on live demo vs. benchmark honesty. This section must state plainly what ran on the builder's own machine versus what came from Qualcomm AI Hub's cloud device profiling, before submission._
