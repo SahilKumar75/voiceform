@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NSP Post-Matric Scholarship intake fields (demo scope)",
+  "description": "Field names, types and formats match the real National Scholarship Portal (scholarships.gov.in) Post-Matric application: State of Domicile, Personal Details, Bank Account Details sections. Scoped to the fields named in idea-spec.md for the 90 second demo; the full NSP form has additional academic/institution fields not covered here.",
+  "type": "object",
+  "required": [
+    "applicant_name",
+    "date_of_birth",
+    "state_of_domicile",
+    "community_category",
+    "annual_family_income",
+    "bank_account_number",
+    "bank_ifsc_code"
+  ],
+  "properties": {
+    "applicant_name": {
+      "type": "string",
+      "description": "Full name of student, as printed on educational certificates"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "pattern": "^\\d{2}-\\d{2}-\\d{4}$",
+      "description": "DD-MM-YYYY, matching NSP's required certificate format"
+    },
+    "state_of_domicile": {
+      "type": "string",
+      "description": "State of permanent address, per NSP terminology"
+    },
+    "community_category": {
+      "type": "string",
+      "enum": ["General", "OBC", "SC", "ST", "EWS", "Minority"],
+      "description": "NSP calls this field Community/Category"
+    },
+    "annual_family_income": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Annual family income in INR"
+    },
+    "bank_account_number": {
+      "type": "string",
+      "pattern": "^[0-9]{9,18}$",
+      "description": "Applicant's own bank account, required for DBT (Direct Benefit Transfer)"
+    },
+    "bank_ifsc_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{4}0[A-Z0-9]{6}$",
+      "description": "Standard 11 character IFSC format"
+    }
+  }
+}
