@@ -59,6 +59,7 @@ h1 {
 }
 
 .mic-button {
+  position: relative;
   appearance: none;
   border: none;
   width: 132px;
@@ -71,28 +72,33 @@ h1 {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 8px 24px -6px var(--accent-active-shadow), 0 2px 6px rgba(0, 0, 0, 0.06);
-  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+  transition: transform 160ms var(--ease-out);
   animation: mic-breathe 2.4s var(--ease-in-out) infinite;
 }
 
-.mic-button:hover {
-  box-shadow: 0 10px 28px -6px var(--accent-active-shadow), 0 3px 8px rgba(0, 0, 0, 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .mic-button:hover {
+    transform: scale(1.02);
+  }
 }
 
 .mic-button:active {
   transform: scale(0.96);
-  box-shadow: 0 4px 14px -4px var(--accent-active-shadow), 0 1px 4px rgba(0, 0, 0, 0.06);
   animation-play-state: paused;
 }
 
 @keyframes mic-breathe {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 8px 24px -6px var(--accent-active-shadow), 0 2px 6px rgba(0, 0, 0, 0.06);
   }
   50% {
     transform: scale(1.035);
-    box-shadow: 0 10px 30px -6px var(--accent-active-shadow), 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mic-button {
+    animation: none;
   }
 }
 
@@ -158,12 +164,20 @@ h1 {
   background: var(--accent-confirmed);
   color: var(--surface);
   font-size: 12px;
-  transform: scale(0);
-  transition: transform 200ms var(--ease-out);
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 200ms var(--ease-out), opacity 200ms var(--ease-out);
 }
 
 .field-row.is-filled .field-check {
   transform: scale(1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-check {
+    transition: opacity 200ms var(--ease-out);
+  }
 }
 
 .note {
