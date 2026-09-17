@@ -5,4 +5,13 @@ venv/
 *.onnx
 *.gguf
 .env
+.env.*
+*.key
+*.pem
+credentials*.json
 .DS_Store
+
+# Local Claude Code instructions and strategy docs — not for public GitHub
+CLAUDE.md
+docs/
+.claude/
