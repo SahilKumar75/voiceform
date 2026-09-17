@@ -2,7 +2,7 @@
 
 An on device voice assistant that fills the NSP Post-Matric Scholarship form for a low literacy Hindi speaker, with a spoken confirm and correct loop. Built for the Snapdragon® AI Lab Build & Present Challenge (Qualcomm, 2026).
 
-**Status: AI Hub NPU benchmark obtained, schema locked, placeholder UI built (no ASR/LLM wired up yet).**
+**Status: AI Hub NPU benchmark obtained, schema locked, static HTML/CSS/JS placeholder UI built (no ASR/LLM wired up yet).**
 
 ## What's real vs. simulated
 _To be filled in as the build progresses, see docs/build plan.md Decision on live demo vs. benchmark honesty. This section must state plainly what ran on the builder's own machine versus what came from Qualcomm AI Hub's cloud device profiling, before submission._
@@ -26,7 +26,10 @@ Job details: [encoder profile](https://workbench.aihub.qualcomm.com/jobs/jp0mrr7
 This confirms the model compiles and runs entirely on the Hexagon NPU (0 ops fell back to CPU or GPU) on a real cloud hosted Snapdragon X Elite device, obtained without owning physical hardware, via Qualcomm AI Hub's device farm.
 
 ## Install & run
-_TBD._
+```
+python3 -m http.server 8501 --directory app
+```
+Then open `http://localhost:8501/web/index.html`. Tap the mic button to see the fill/confirm interaction (demo values only, ASR not connected yet).
 
 ## Demo video
 _TBD._
